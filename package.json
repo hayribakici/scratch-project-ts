@@ -1,0 +1,46 @@
+{
+  "name": "scratch-project-ts",
+  "version": "0.1.0",
+  "description": "Read Scratch projects and retrieve their scripts with TypeScript",
+  "license": "MIT",
+  "keywords": [
+    "scratch",
+    "sb3",
+    "scratchblocks",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hayribakici/scratch-project-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hayribakici/scratch-project-ts/issues"
+  },
+  "homepage": "https://github.com/hayribakici/scratch-project-ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "parse-sb3-blocks": "0.5.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2",
+    "vitest": "^4.1.10"
+  }
+}
