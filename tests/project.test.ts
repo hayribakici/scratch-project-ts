@@ -45,6 +45,22 @@ describe("ScratchProject", () => {
     ]);
   });
 
+  it("returns only the sprites", () => {
+    expect(
+      project.getSprites().map(({name, isStage }) => ({ name, isStage }))
+    ).toEqual([
+      { name: "Crab", isStage: false }
+    ]);
+  });
+
+  it("returns only the stages", () => {
+    expect(
+      project.getStages().map(( { name, isStage }) => ({ name, isStage }))
+    ).toEqual([
+      { name: "Stage", isStage: true }
+    ]);
+  });
+
   it("returns undefined for an unknown target", () => {
     expect(project.getTarget("Unknown")).toBeUndefined();
   });

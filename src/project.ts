@@ -19,6 +19,16 @@ export class ScratchProject {
         return this.targets;
     }
 
+    /** Returns only the sprites. */
+    getSprites(): readonly ScratchTarget[] {
+        return this.targets.filter(target => !target.isStage);
+    }
+
+    /** Returns only the stages. */
+    getStages(): readonly ScratchTarget[] {
+        return this.targets.filter(target => target.isStage);
+    }
+
     /** Finds a stage or sprite by its name. */
     getTarget(name: string): ScratchTarget | undefined {
         return this.targets.find(target => target.name === name);
